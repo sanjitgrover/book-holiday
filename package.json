@@ -1,0 +1,28 @@
+{
+  "name": "book-holiday",
+  "version": "1.0.0",
+  "description": "AWS microservices using Lambda, API Gateway, Dynamodb and CDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjitgrover/book-holiday.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjitgrover/book-holiday/issues"
+  },
+  "homepage": "https://github.com/sanjitgrover/book-holiday#readme",
+  "devDependencies": {
+    "@types/node": "^18.6.1",
+    "aws-cdk": "^2.33.0",
+    "aws-cdk-lib": "^2.33.0",
+    "constructs": "^10.1.56",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
