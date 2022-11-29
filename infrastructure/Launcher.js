@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const SpaceStack_1 = require("./SpaceStack");
+const aws_cdk_lib_1 = require("aws-cdk-lib");
+const app = new aws_cdk_lib_1.App();
+new SpaceStack_1.SpaceStack(app, 'Space-finder', { stackName: 'SpaceFinder' });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGF1bmNoZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJMYXVuY2hlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUEwQztBQUMxQyw2Q0FBZ0M7QUFFaEMsTUFBTSxHQUFHLEdBQUcsSUFBSSxpQkFBRyxFQUFFLENBQUE7QUFDckIsSUFBSSx1QkFBVSxDQUFDLEdBQUcsRUFBRSxjQUFjLEVBQUUsRUFBQyxTQUFTLEVBQUMsYUFBYSxFQUFDLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFNwYWNlU3RhY2sgfSBmcm9tIFwiLi9TcGFjZVN0YWNrXCI7XG5pbXBvcnQge0FwcH0gZnJvbSAnYXdzLWNkay1saWInO1xuXG5jb25zdCBhcHAgPSBuZXcgQXBwKClcbm5ldyBTcGFjZVN0YWNrKGFwcCwgJ1NwYWNlLWZpbmRlcicsIHtzdGFja05hbWU6J1NwYWNlRmluZGVyJ30pIl19

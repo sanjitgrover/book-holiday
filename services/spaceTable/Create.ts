@@ -9,10 +9,8 @@ async function handler(event: APIGatewayProxyEvent, context:Context):Promise<API
         statusCode:200,
         body:'DynamoDB insert'
     }
-    
-    const item = {
-        spaceId: v4()
-    }
+    const item = typeof event.body == 'object'?event.body: JSON.parse(event.body);
+    item.spaceId= v4();
     
     try{
         await dbClient.put({
@@ -22,7 +20,7 @@ async function handler(event: APIGatewayProxyEvent, context:Context):Promise<API
     }catch(error){
         result.body=error.message
     }
-    
+    result.body=JSON.stringify(`Created item with Id: ${item.spaceId}`);
     return result;
 }
 

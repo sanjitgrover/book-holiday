@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const aws_sdk_1 = require("aws-sdk");
+const s3Client = new aws_sdk_1.S3();
+async function handler(context, event) {
+    const buckets = await s3Client.listBuckets().promise();
+    return {
+        statusCode: 200,
+        body: 'CDK Buckets' + JSON.stringify(buckets.Buckets)
+    };
+}
+exports.handler = handler;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVsbG8uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJoZWxsby50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLHFDQUEyQjtBQUUzQixNQUFNLFFBQVEsR0FBRyxJQUFJLFlBQUUsRUFBRSxDQUFDO0FBQzFCLEtBQUssVUFBVSxPQUFPLENBQUMsT0FBWSxFQUFFLEtBQVU7SUFDM0MsTUFBTSxPQUFPLEdBQUcsTUFBTSxRQUFRLENBQUMsV0FBVyxFQUFFLENBQUMsT0FBTyxFQUFFLENBQUM7SUFDdkQsT0FBTztRQUNILFVBQVUsRUFBRSxHQUFHO1FBQ2YsSUFBSSxFQUFFLGFBQWEsR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUM7S0FDeEQsQ0FBQTtBQUNMLENBQUM7QUFFTywwQkFBTyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7djR9IGZyb20gJ3V1aWQnO1xuaW1wb3J0IHtTM30gZnJvbSAnYXdzLXNkayc7XG5cbmNvbnN0IHMzQ2xpZW50ID0gbmV3IFMzKCk7XG5hc3luYyBmdW5jdGlvbiBoYW5kbGVyKGNvbnRleHQ6IGFueSwgZXZlbnQ6IGFueSl7XG4gICAgY29uc3QgYnVja2V0cyA9IGF3YWl0IHMzQ2xpZW50Lmxpc3RCdWNrZXRzKCkucHJvbWlzZSgpO1xuICAgIHJldHVybiB7XG4gICAgICAgIHN0YXR1c0NvZGU6IDIwMCxcbiAgICAgICAgYm9keTogJ0NESyBCdWNrZXRzJyArIEpTT04uc3RyaW5naWZ5KGJ1Y2tldHMuQnVja2V0cylcbiAgICB9XG59XG5cbmV4cG9ydCB7aGFuZGxlcn0iXX0=
