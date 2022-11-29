@@ -1,6 +1,14 @@
 import {Table, AttributeType} from "aws-cdk-lib/aws-dynamodb";
 import {Stack} from "aws-cdk-lib";
 
+export interface TableProps{
+    tableName: string,
+    primaryKey: string,
+    createLambdaPath?: string,
+    readLambdaPath?: string,
+    updateLambdaPath?: string,
+    deleteLambdaPath?: string
+}
 
 export class GenericTable{
     private name: string;
