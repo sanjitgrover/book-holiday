@@ -16,6 +16,54 @@
         "id": "Space-finder",
         "path": "Space-finder",
         "children": {
+          "SpaceTable": {
+            "id": "SpaceTable",
+            "path": "Space-finder/SpaceTable",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Space-finder/SpaceTable/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "spaceId",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "spaceId",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    },
+                    "tableName": "SpaceTable"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                  "version": "2.33.0"
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "Space-finder/SpaceTable/ScalingRole",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.33.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+              "version": "2.33.0"
+            }
+          },
           "helloLambda": {
             "id": "helloLambda",
             "path": "Space-finder/helloLambda",
@@ -105,7 +153,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "770723f71c8f964ceb0c9c6d138b916e8a68e23ed902f412c6c42f9538476985.zip"
+                      "s3Key": "e8a6c82a1b7612ee0e7f066551b44e8498b79ac1a3397598d9f83690bc0f5614.zip"
                     },
                     "role": {
                       "Fn::GetAtt": [
