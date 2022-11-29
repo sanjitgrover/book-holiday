@@ -19,8 +19,8 @@
   "homepage": "https://github.com/sanjitgrover/book-holiday#readme",
   "devDependencies": {
     "@types/node": "^18.6.1",
-    "aws-cdk": "^2.33.0",
-    "aws-cdk-lib": "^2.33.0",
+    "aws-cdk": "^2.51.1",
+    "aws-cdk-lib": "^2.51.1",
     "constructs": "^10.1.56",
     "exbuild": "^0.2.2",
     "ts-node": "^10.9.1",

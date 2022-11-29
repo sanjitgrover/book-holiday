@@ -17,7 +17,7 @@ async function handler(event: APIGatewayProxyEvent, context:Context):Promise<API
             TableName: 'SpaceTable',
             Item: item
         })
-    }catch(error){
+    }catch(error:any){
         result.body=error.message
     }
     result.body=JSON.stringify(`Created item with Id: ${item.spaceId}`);
