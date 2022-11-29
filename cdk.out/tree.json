@@ -64,17 +64,17 @@
               "version": "2.33.0"
             }
           },
-          "helloLambda": {
-            "id": "helloLambda",
-            "path": "Space-finder/helloLambda",
+          "helloLambdanode": {
+            "id": "helloLambdanode",
+            "path": "Space-finder/helloLambdanode",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "Space-finder/helloLambda/ServiceRole",
+                "path": "Space-finder/helloLambdanode/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "Space-finder/helloLambda/ServiceRole/Resource",
+                    "path": "Space-finder/helloLambdanode/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -119,11 +119,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "Space-finder/helloLambda/Code",
+                "path": "Space-finder/helloLambdanode/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "Space-finder/helloLambda/Code/Stage",
+                    "path": "Space-finder/helloLambdanode/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.33.0"
@@ -131,7 +131,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "Space-finder/helloLambda/Code/AssetBucket",
+                    "path": "Space-finder/helloLambdanode/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.33.0"
@@ -145,7 +145,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "Space-finder/helloLambda/Resource",
+                "path": "Space-finder/helloLambdanode/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
@@ -153,16 +153,21 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "e8a6c82a1b7612ee0e7f066551b44e8498b79ac1a3397598d9f83690bc0f5614.zip"
+                      "s3Key": "7ecc77636deefb31954ea2e6aadf6d2c361a2943535a678d65f46a8de5e1f503.zip"
                     },
                     "role": {
                       "Fn::GetAtt": [
-                        "helloLambdaServiceRoleBB046714",
+                        "helloLambdanodeServiceRole41FDF7D5",
                         "Arn"
                       ]
                     },
-                    "handler": "hello.main",
-                    "runtime": "nodejs16.x"
+                    "environment": {
+                      "variables": {
+                        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+                      }
+                    },
+                    "handler": "index.handler",
+                    "runtime": "nodejs14.x"
                   }
                 },
                 "constructInfo": {
@@ -172,7 +177,7 @@
               }
             },
             "constructInfo": {
-              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
               "version": "2.33.0"
             }
           },
