@@ -1,5 +1,6 @@
 import {Table, AttributeType} from "aws-cdk-lib/aws-dynamodb";
 import {Stack} from "aws-cdk-lib";
+import {NodejsFunction} from "aws-cdk-lib/aws-lambda-nodejs"
 
 export interface TableProps{
     tableName: string,
@@ -15,6 +16,11 @@ export class GenericTable{
     private primaryKey: string;
     private stack: Stack;
     private table: Table;
+    
+    private createLambdaPath: NodeJsFunction |undefined;
+    private readLambdaPath: NodeJsFunction |undefined;
+    private updateLambdaPath: NodeJsFunction |undefined;
+    private deleteLambdaPath: NodeJsFunction |undefined;
     
     public constructor(name: string, primaryKey: string, stack: Stack){
         this.name = name;
